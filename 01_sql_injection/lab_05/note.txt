@@ -1,0 +1,3 @@
+SQL injection union attack, retriving data from other tables
+
+since you now kow how to know how much column a retrived data table has, you can now add another table of the same column size using sth ilke ' UNION SELECT username, password FROM users-- BUT the amount of column should match other wise fill it with null. (encode always)

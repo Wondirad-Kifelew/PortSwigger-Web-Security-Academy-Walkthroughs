@@ -1,0 +1,4 @@
+user role controlled by a request parameter
+
+ded as a parameter in the request, use burp to add role equals 2 then you'll get the response
+

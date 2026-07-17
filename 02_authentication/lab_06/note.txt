@@ -1,0 +1,3 @@
+2FA broken logic
+
+although i haven't completed it due to brute forcing being super slow, the way it is done  is log in as wiener then intercept while sending an invalid code. after that in the cookies change the name to carlos. the bakend now assumes it comes from carlos and logs you in. to do that bruteforce an mfa-code data field from 0000 to 9999 and you'll get a 302 redirect passing the 2 factor auth

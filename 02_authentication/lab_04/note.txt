@@ -1,0 +1,4 @@
+Broken brute-force protection, IP block
+
+here the account gets blocked if there is 3 successive failed login attemps and i was given a valid credential as well. so check 2 username pass pairs using username carlos and password from the word list and one correct one to bypass the blocking feature. 
+use the pichfork attack with the pattern wiener carlos carlos wiener pattern, same with passwords run them in parallel and youll get the pass

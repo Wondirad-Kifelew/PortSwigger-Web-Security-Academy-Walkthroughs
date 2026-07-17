@@ -1,0 +1,3 @@
+Blind SQL injection with time delays
+
+here just check the time delay codes of all dbase types and see which one fits. and for this lab it was postgresql. so use ||pg_sleep(10)- concatenate then sleep for 10 sec and comment the rest

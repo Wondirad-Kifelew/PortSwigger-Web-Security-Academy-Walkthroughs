@@ -1,0 +1,3 @@
+Web shell upload via content type restriction bypass
+
+so first check by uploading the webshell code <?php echo file_get_contents('/home/carlos/secret'); ?> as evil.php in the avatar uploading section, you can see it says its not allowed and only image/jpeg is allowed. So  change the content of Content-Type: application/x-php to the allowed image/jpeg then send. try then a get req to .../files/avatars/evil.php

@@ -1,0 +1,9 @@
+SQLi Blind injection
+
+this method is used if page content changes based on the cookie used in SQL
+
+first check if the cookie is being used in a SQL querry
+ try booleans and by seeing its effects on the response you know what is up like lets say you thought the cookie is being used in a SQL querry for lets say a welcome message, you add ' and '1'eq'1 then do the same but use '1'eq'2 always false value then if the cookie is being used you will see the diff on the screen.
+now you know that the cookie is being used in SQL querry,
+ you then can add a password letter by letter check like and substring((select password from users where username eq 'administrator'), 1, 1) eq 'a 
+what happens here is it checks if the first letter of the password of user administrator is 'a' but use this in intruders tab of burp, select 'a and add it to payload. then use a letters List.txt which has a-zA-Z0-9 vertically upload it then attack. you will see hte payload legth change for every letter change. that is when you know if your welcome message is beign displayed or not. develop those letters to get the full password

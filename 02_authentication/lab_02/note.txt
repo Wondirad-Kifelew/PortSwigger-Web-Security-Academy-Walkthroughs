@@ -1,0 +1,4 @@
+username enumeration via subtly different responses
+
+same here grep the error search for the username using single pass get the username (the one with its error has no full stop) then use that again to find the pass
+

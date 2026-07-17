@@ -1,0 +1,4 @@
+Bypassing rate limits via race conditions
+
+i just used this script in burp turbo intruder(the script in the current dir)
+but its not pure python. It has turbo intruders functions and stuff and only works with in burp tool

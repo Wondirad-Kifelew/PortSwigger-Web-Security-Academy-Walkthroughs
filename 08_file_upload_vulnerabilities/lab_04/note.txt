@@ -1,0 +1,5 @@
+Web shell upload via extension blacklist bypass
+
+here the app has a list of extensions that it has blacklisted so that if i upload a php file it will be blocked and wont get executed as i make a get request to that file. But it had a config fault in that i can upload a config file to overwrite the existing one. So I uploaded a .htaccess with a content 
+AddType application/x-httpd-php .l33t
+and all it does is it allows the custom extension .l33t and allow it to be executable, since all the executable types must be listed in the app. so i renamed my evil.php to evil.l33t and a get req to /files/avatars/evil.l33t?command eq cat /home/carlos/secret

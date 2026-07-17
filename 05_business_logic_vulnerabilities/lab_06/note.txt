@@ -1,0 +1,3 @@
+Infinite money logic flaw
+
+The online store app has a business logic flaw in that gift cards can be bought  in discount then redeemed for the original price letting users keep the extra. so to abuse this use the 30% discount using SIGNUP30 on giftcards with 7$, redeem to get 10$ getting additional 3$. abuse this till ..

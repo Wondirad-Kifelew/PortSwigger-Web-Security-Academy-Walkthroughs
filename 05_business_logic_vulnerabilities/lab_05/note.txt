@@ -1,0 +1,5 @@
+Authentication bypass via flawed state machine
+
+as we login it asks as to chose a role as User or Content editor or sth, so i guess admin doesnt chose that so logout then intercept, login, and drop the get req to /role-selector then remove the role-selector form the url and you are admin
+
+

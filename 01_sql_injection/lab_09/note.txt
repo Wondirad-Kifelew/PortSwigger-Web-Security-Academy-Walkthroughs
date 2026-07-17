@@ -1,0 +1,6 @@
+visible error based sql injection
+
+ (here we get the password with  in the displayed error message, forcing it from the db)
+
+use TrackingId=' AND 1=CAST((SELECT password FROM users LIMIT 1) AS int)--
+but first throw a cast error then you'll get verbose error. remove the tracking id also limit the lines to 1. but before checking the password use the username administrator then after knowing its that user in that row, use the password.

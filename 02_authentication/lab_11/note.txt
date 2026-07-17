@@ -1,0 +1,4 @@
+Password brute-force via password change
+
+here  the login and password change is sent in one request which lets you bypass the login and change the pass of another user in one go. first login with wiener peter then in the pass change page(same page), intercept and see that the pass change and login are requested together and also if the pass is right and the 2 passwords dont match, you get a "passwords dont match" error, however if the login pass is wrong to start with, you get a "pass is incorrect" err so bruteforce from the word list and see which one has diff err"pass dont match" meaning that that pass was correct its just filtered by the second error handler. so use that pass and change the pass of carlos
+

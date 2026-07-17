@@ -1,0 +1,8 @@
+SSRF with blacklist-based input filter
+
+same with teh first one simply add a url http://localhost/admin/delete?username=carlos , but since the devs had added some filter to block bypassing it.( I used 127.1 and used /Admin.
+ try these for the ip
+127.0.0.1, localhost, 127.1, 2130706433, 017700000001, register ur own domain name that resolves to 127.0.0.1 like (spoofed.burpcollaborator.net), 
+for the string(if the string in the url i blocked try,
+URL encoding or case variation
+try a URL that you control and try to redirect to the target site

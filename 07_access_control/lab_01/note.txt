@@ -1,0 +1,3 @@
+unprotected admin functionality
+
+simply go to the robots.txt and will find the secret route

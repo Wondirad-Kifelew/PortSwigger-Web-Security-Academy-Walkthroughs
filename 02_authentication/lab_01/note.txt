@@ -1,0 +1,4 @@
+username enumeration via diff responses
+
+here the username and the pass have diff error responses so try bruteforcing username first having the pass as a wordlist, then youll get the user name because the error message changes make sure you grep the error part in intruder section to filter at the end from the results table
+

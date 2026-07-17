@@ -1,0 +1,4 @@
+Basic SSRF against another back-end system
+
+the vulnerability here is it makes a request to another backend when a stock check button is clicked. So to exploit that add http%3A%2F%2F192.168.0.170%3A8080%2Fadmin/delete?username=carlos and done, but the catch is the last ip number is not known so you'd have to fuzz it using 
+http://192.168.0.X:8080/product/stock/check?productId=2&storeId=1 you'll see a 404 error on one of them, which is the last IP digit

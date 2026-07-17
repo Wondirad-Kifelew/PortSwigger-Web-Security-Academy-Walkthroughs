@@ -1,0 +1,3 @@
+Blind OS command injections with output redirections
+
+use pipepipe whoami+>+/var/www/images/file.txt pipepipe and not  the & because it will break the parameter listing and wont work. after using the pipes and all check website.com/image?filename=file.txt

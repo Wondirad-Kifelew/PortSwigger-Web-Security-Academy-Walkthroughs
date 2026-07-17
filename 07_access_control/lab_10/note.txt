@@ -1,0 +1,12 @@
+Referer based access control
+
+now it uses a post request to "/admin-roles?username=carlos&action=upgrade" to change access, and not in the payload but the problem is, the admin subpages check if the referer is also trusted: from the /admin page so change taht as well as the request url to "/admin-roles?username=carlos&action=upgrade" from the users page and escalate to admin
+
+
+NOTE:
+for vertical escalation
+1, check robots.txt 2. is there an isAdmin check in the javascript file 3. in the cookies is there a isAdmin flag
+for horizontal escal
+1. simple parameter change like a  2. find the GUID and use it in a url param 3. if redireced change the redirect too
+
+

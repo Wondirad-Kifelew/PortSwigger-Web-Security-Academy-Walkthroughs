@@ -1,0 +1,4 @@
+SQLi vulnerability allowing login bypass
+
+since it does a check like select username eq 'someone' and pass 'something something' you can just use  admin' — to use select username 'admin' — commenting the rest so no pass check
+

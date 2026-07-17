@@ -1,0 +1,8 @@
+Username enumeration via account lock
+
+here with a correct username there should only be several attempts, after that the account gets locked, i have not been given any correct username or pass just a wordlists for both. so using 5 random pass bruteforce usernames trying them all until one of them gets a "too many attemps account temprarily locked" error. then use that pass aganist the password real list.
+
+NB: credential stuffing: using a breached username:pass and trying out on lots of users, can compromise huge amount of users
+l6: Broken brute-force protection, multiple credentials per request 
+it was rate limiting and we cant send many req so many/req 
+make the passwords an array paf passwords instead of a single one in the repeater then pass

@@ -1,0 +1,3 @@
+Web shell upload via obfuscated file extension
+
+%2E, %2e, .p.phphp, .pHp, .php.jpg, .php., .asp;.jpg, asp%00.jpg, ...these and others can be used to obfuscate a file name to bypass a php filter. so since this lab was asking for only image/jpg i used .php.jpg but i didnt know how to execute later so i changed it to .php%00.jpg so after it passes the filter it was executed as a proper.php file. so i used that to upload then i simply used a get request to ...url.../files/avarars/evil.php?command eq cat /home/carlos/secret

@@ -1,0 +1,7 @@
+Web shell upload via race condition
+
+so i didnt do this on my own but i got how it works. the app has a robust file check before moving uploads to a random path but the problem is before doing that it stores it in the usual location /files/avators/evil.php first. After the check function runs, and it is now an image, it gets discarded. but the problem is there is a brief time where we can do a get req to that path and read the content which is out php output(<?php system('cat /home/carlos');?>  . so i added the post req to add the upload and the get req after it(modified it to /files/avatars/evil.php) and send them to repeater, grouped them, and run them in parallel( for the race). it displays the secret after a few tries
+
+NB if the file path I'd have to guess become random like pseudo-random maybe made using uniqid() which can be brute forced given some time. The problem here is that we wont have enough time to guess that until the app throws it away so the solution, make the file so big and if it reads it byte by byte make lots of junk so it would take longer.
+
+NB: PUT req can be applied application level or server level, usually it shouldnt be enabled server levvel or else, attackers could modify files like adding executable to paths. one way to check is using the OPTIONS method. to do this just apply the OPTIONS method on the end point and it will list all the available methods, if yous see PUT and executable are allowed, you can add the php code there

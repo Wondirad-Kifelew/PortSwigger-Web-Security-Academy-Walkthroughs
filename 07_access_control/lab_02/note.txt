@@ -1,0 +1,3 @@
+unprotected admin functionality with unpredictable URL
+
+the path to the admin page is in the javascript code 'isAdmin' part

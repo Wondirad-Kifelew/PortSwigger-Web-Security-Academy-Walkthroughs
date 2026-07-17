@@ -1,0 +1,5 @@
+Username enumeration via response timing
+
+so this one was interesting, so every time a user tries to login the backend checks first the username then the password. if the username is not correct it doesnt check the password and that could be used as a vulnerability here. this is because it takes more time to check both specially if the password is very long and complicated. to check you can use 1 correct and 1 incorrect username with a loooong incorrect password. so you can see that the correct username takes way longer like lots of ms. 
+so to do this lab, simply add a X-Forwarded-For header with ip address 1.1.1.1 or any and change the ip on every request. this is because the server will block users with 3 failed attempts. use the intruder's pichfork attack and highlight the username with a loong password, run the attack and sort the response with descending response time. The one with tthe longest time will be the correct username. use that username to get the password now just bruteforcing with the given word list.
+

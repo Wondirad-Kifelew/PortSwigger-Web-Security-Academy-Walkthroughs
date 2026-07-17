@@ -1,0 +1,5 @@
+SQL injection UNION attack, determining the number of columns returned by the query
+
+so to use the union sqli attack, the amount of columns must be known first, and to do that there are 2 methods one of them is checking using null just like this "SQL injection UNION attack, determining the number of columns returned by the query" adding ' union select null,null,null-- this will match the amount of column and returns the table if the amount of null matches the amount of column, if its not it returns error. so do this until the table pops up, then amount of null is the amount of columns.
+another way could be using the order by like %27%20ORDER%20BY%201--
+ or ' ORDER BY 1— changint the number

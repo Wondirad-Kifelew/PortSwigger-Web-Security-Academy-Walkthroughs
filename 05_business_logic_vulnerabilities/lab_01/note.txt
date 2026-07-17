@@ -1,0 +1,3 @@
+High-level logic vulnerability
+
+in this lab there is a logic flaw in the purchasing flow. It allows negative quantities. so i ordered a jacket and -11 other 70$ items totally it came up under 100$

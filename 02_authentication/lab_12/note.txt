@@ -1,0 +1,3 @@
+Authentication bypass via OAuth implicit flow
+
+this web app uses O auth for authentication but the logic is flawed. the part the web app backend made a mistake is after hte user consents and the O auth service provider gives token to the client app, it should have sent that in the header of requesting the resource server of the O Auth but it didnt. Instead it sent username and email as a payload. so i edited that to carloses email and his username and sent it, got a session id response, used that in application tab and i am logged in as carlos.

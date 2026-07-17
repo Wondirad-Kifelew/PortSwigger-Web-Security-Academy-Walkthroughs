@@ -1,0 +1,3 @@
+OS command injection, simple case
+
+here there was a command injection vulnerability in the product and store payload so i injected the command & whoami  in the middle and url encoded it

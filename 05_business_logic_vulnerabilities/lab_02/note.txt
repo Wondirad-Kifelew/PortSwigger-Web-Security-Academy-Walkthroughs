@@ -1,0 +1,3 @@
+Weak isolation on dual-use endpoint
+
+here in the password change page there is a logic flaw that doesnt only checks current pass only in client side so i changed the parameter by deleting the key vale pair of current pass and changed the usernames to administrator, changed the pass. and i became admin

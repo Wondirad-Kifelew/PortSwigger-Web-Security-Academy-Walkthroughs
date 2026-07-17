@@ -1,0 +1,9 @@
+Blind sqli with conditional errors
+
+this method is used when the cookie is used in SQL querry but notting is displayed as a result of it
+
+here the cookie one of them, is used in sql internally, to check I used the prev methods using ' and 'a'eq'a but didnt get anything since it doesnt display anything based off of this response. so the best way was to cause a db error which gets displayed . to do that I used 
+
+' and (select case when( (substr((password),1,1)) eq 'a') then to_char(1/0) else 'a' end from users where username eq 'administrator') eq 'a
+
+here i increment the substring also the letter,numb i check with in the condition and if it results true cause an error by doing 1/0 which wil get displayed on the screen. so i bruteforced itto get the pass char when ever there is an error. but this method was slow in burp so i used the script 

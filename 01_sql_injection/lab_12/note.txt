@@ -1,0 +1,3 @@
+SQL injection attack, querying the database type and version on Oracle
+
+just  intercept and since the category section is sql vulnerable and we're told that its an oracle db, simply add ' union select null,null from dual— no error and check which column is string then inject the oracle version check key words in there by doing 'union select banner, null from v$version— you'll get the version string

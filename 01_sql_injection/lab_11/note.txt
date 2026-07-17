@@ -1,0 +1,4 @@
+Blind SQL injection with time delays and information retrieval
+
+here you follow the previous method i.e, checking which db is used in the backend and making sure the delay functionality works, then use that in a conditional to check each letter of the administrator's password. use the script in this directory
+

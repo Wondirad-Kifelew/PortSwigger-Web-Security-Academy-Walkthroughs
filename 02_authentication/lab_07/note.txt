@@ -1,0 +1,3 @@
+Brute-forcing a stay-logged-in cookie
+
+there is a stay-logged-in cookie that is used in remember me functionality. the goal of this lab is to know how it is formed using the already provided username and pass, login click remember me and generate that cookie. and the cookie when base64 decoded looks like wiener:asdasd(md5hash of pass)dasd so using that i hashed all the passwords list concatenated them with carlos: then base 64 encoded them using those cookies i sent the already logged in account to burp intruder and brute forced the cookies. make sure to clear the session it kinda works that way.

@@ -1,0 +1,3 @@
+SQL injection vulnerability in where clause allowing retrival of hidden data
+
+just use ' OR 1=1 -- ' but encoded %27%20OR%201%3D1%20--%20%27 and it will retrive all including hidden data commenting the restrictions 

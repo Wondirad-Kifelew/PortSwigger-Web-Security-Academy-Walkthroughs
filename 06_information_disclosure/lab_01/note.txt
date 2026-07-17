@@ -1,0 +1,11 @@
+Information disclosure in error messages
+
+here we're told to find the vulnerable version number of frame work its made of. so to do taht break it by adding a string i the url parameter. 
+
+
+NOTE: some common sources of information disclosure,
+1. files for web crawlers(/robots.txt and /sitemap.xml)
+2. directory listing, if enabled lists the files in a server directory. Access control also matters here so if its strong not much of an issue
+3.dev comments
+4. error messages can reveal server names or what its made of and their versions so you could look their unpatched errors and stuff.  also helps in username enumeraion
+5.Debug data

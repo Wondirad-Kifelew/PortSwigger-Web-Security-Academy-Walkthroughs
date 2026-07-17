@@ -1,0 +1,5 @@
+Limit overrun race conditions
+
+In this lab there is a race condition vulnerability in the purchasing flow specifically the coupon adding process. So It was possible to add multiple coupons before the app checks if it has already been used and block from applying more coupons. so I grouped 25 post req to /cart/coupon and sent them at once using the single packet method since it was using the HTTP2 request type. then check out
+
+

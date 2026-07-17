@@ -1,0 +1,3 @@
+Web shell upload via path traversal
+
+I tried uploading the webshell file but as i navigate, it just displays the code which i dont need and the file where the uploaded files reside, might have been disabled to execute the files inside. So, i intercepted as i upload the file and changed hte file name to ../evil.php or "%2f%2fevil.php" and saved it up a dir and i did a get req to .......files/evil.php?commandeq cat /home/carlos/secret and got the code

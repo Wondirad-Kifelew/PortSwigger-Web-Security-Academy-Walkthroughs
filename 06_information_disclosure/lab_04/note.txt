@@ -1,0 +1,5 @@
+Authentication bypass via information disclosure
+
+In this lab TRACE functionaity was enabled so i replaced the post req with trace then sent the req. I then saw what my request looks like as the app receives it and it had this header 
+X-Custom-Ip-Authorization: 192.sth sth my ip addres 
+this ip address was added by the reverse proxy to identify my ip address and since i can modify it from the client side, I have changed it and added a post req to /admin with X-Custom-Ip-Authorization: 127.0.0.1 header to the client side. meaning that trust this route as if it is an internal tool cuz local ips are trusted by default. which means the /admin reqeust dont have to authenticate. so i did that and using the same intercept I deleted the user carlos again adding that header

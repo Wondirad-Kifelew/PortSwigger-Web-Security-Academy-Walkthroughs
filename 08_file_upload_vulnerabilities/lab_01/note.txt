@@ -1,0 +1,3 @@
+Remote code execution via web shell upload
+
+here the server executes a php file if sent, and the image upload functionality doesn't check properly so i uploaded a file evil.php with a content <?php echo file_get_contents('/home/carlos/secret'); ?> and as i see the proxy req its uploaded in the path /files/avatars/evil.php so i sent a get req to taht and the app executes before sending, and me got the secret content

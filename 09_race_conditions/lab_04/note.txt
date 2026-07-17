@@ -1,0 +1,4 @@
+Single-endpoint race conditions
+
+its possible to enter a race using requests with different contents. One common example is changing emails, if lets say we wanted to change to an admin email we know but since we dont have the email app we cant accept the verification link, but to bypass that its possible to race our email and the admin's email and we they might enter a race and get sent to us with email contents of the admins(the content is a confirmation link to change the admin's email) then after clicking it. we have successfully changed our email with the admin's. 
+this happens because there exists a window between the recepient email lock and adding content to the email body.

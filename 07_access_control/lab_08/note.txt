@@ -1,0 +1,3 @@
+User ID controlled by request parameter with data leakage in redirect
+
+although i checnged the name in the url it keeps returning to my page because the redirect needs to be changed to. so using burp head to my accout page and change the name in the url as well as the one in the redirect. then you now are in the carlos page. get the api of carlos

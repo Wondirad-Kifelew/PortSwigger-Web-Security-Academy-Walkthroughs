@@ -1,0 +1,3 @@
+URL based access control can be circumvetted
+
+here the WAF(web application firewall which is just before the backend like the reverse proxy is checking the original request and their corresponding access rights. but by adding X-Original-URL: /admin/delete and changing the original url to just fetch the user carlos, which we are about to delete using GET /usernameeq carlos we now can bypass the WAF using the original url and the backend reads the overwritten url which is the one with the delete. so we can delete the user carlos

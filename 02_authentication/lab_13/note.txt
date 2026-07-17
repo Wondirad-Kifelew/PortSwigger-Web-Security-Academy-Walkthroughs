@@ -1,0 +1,3 @@
+Forced OAuth profile linking
+
+here we login using normal username and the account first. The account page also has a social linking feature with a flaw. which is it doesnt have a state parameter which makes it vunerable for a CSRF attack. so to exploit that we start linking our profile, intercept before the linking finishes, send the redirect url to the victum and let him finish it. but the most important step is intercept and click the link button when the redirect happens DROP the request so that we dont finish the linking process to out account, we want the admin to finish it. So send him the link, he'll finish it. logout and in with a socials account, and out and his account is linked to our socials.

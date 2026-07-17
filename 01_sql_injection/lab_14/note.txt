@@ -1,0 +1,6 @@
+SQL injection attack, listing the database contents on non-Oracle databases
+
+step1 the question says its a non oracle so i checked mysql, microsoft sql server and postgres and postgres is the one used here
+step2 list the table names: to do that use ' union select table_name from information_schema.tables and see that there is a table called users_fxrlbp so that might be it and narrow from there. I checked for username and password columns there but the column names are also changed so 
+step3 list column names in users_fxrlbp: used 'union select column_name from users_fxrlbp and got the column names username_anwgna  password_ymrofz 
+step4 used them to retrieve the pass and usernames of all users using ' union select username_anwgna ,password_ymrofz from users_fxrlbp

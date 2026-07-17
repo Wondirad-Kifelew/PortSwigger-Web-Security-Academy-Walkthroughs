@@ -1,0 +1,3 @@
+user role can be modified in user profile
+
+there is an email changing input section. enter your email and intercept the request to see whats being sent, you'll see a role of 1 change and send. now you are an admin get in tehre and delete the user carlos

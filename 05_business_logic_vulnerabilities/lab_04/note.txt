@@ -1,0 +1,3 @@
+Insufficient workflow validation
+
+so the last step, if i had enough fund was to make a get request to "GET /cart/order-confirmation?order-confirmed=true " and i it simply checks whats in the cart and if credit is available it makes that get req, if not insufficient fund message, so i simply made that req after i added what ever i want to the cart even though i didnt have enough fund

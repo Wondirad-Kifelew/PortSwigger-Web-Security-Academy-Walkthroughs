@@ -1,0 +1,3 @@
+2FA simple bypass
+
+here there are multi steps to login a login using username and pass and a 2fauth code. The dev is assuming that users will always follow the path but attackers dont. So login as another user, get teh 2fa code, fill it and take note of the redirected url path. then to bypass carloses 2fa again login but now using his credentials but since now the auth flow is broken simply add the path you saved from previous login to the url and the 2fa is  bypassed

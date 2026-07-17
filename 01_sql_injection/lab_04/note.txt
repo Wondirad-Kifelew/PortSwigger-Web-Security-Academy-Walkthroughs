@@ -1,0 +1,3 @@
+SQL injection UNION attack, finding a column containing text
+
+so now you know how to know how many columns does it have. you can throw in strings like ' UNION SELECT NULL, 'a'-- and see if that row contains strings if not you get an error, by doing this you can know which one has what data type. that was how this lab was solved

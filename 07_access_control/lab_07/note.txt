@@ -1,0 +1,3 @@
+User ID controlled by request parameter, with unpredictable user IDs
+
+here is usees unpredictable id called GUID, to find the current users id check the source code. To find the GUID your looking for carlos's GUID, look through the posted things and you will find hes in the source code. use that to escalate horizontally

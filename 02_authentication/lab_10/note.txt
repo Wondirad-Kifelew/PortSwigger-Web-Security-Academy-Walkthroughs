@@ -1,0 +1,6 @@
+Password reset poisoning via middleware
+
+so given a username and pass and carlos's username reset his pass. You have also an exploit server where you give out its domain and kinda get token out of the logs. also an email server of yours so you could see the real flow of resetting a password. 
+you enter a username and click to reset pass, an email is sent to you. in burp what it does is it has your username and a host the server takes the host name puts it in a reset pass link and using the username you provided, it sends a link to your email. to send email to carlos, use a X-Forwarded-Host:the_exploit_server_domain so that the serverr trusts this domain over the domain in the host. it will then use that host to insert to the reset link and sent to carlos, carlos clicks, youll get a log in your exploit server. And since a reset link clicked has a token on it, save taht token for later. 
+back to the legit reset intercept after you wrote the passwordsand clicked, so taht you change the token and the passwords for carlos, done you have reset carlos's pass
+

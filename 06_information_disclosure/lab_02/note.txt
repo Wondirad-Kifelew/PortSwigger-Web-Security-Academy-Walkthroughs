@@ -1,0 +1,3 @@
+Information disclosure on debug page
+
+separate page for debug, and the path is in the source code

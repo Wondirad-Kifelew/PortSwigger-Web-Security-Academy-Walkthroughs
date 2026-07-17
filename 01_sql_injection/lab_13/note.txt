@@ -1,0 +1,3 @@
+SQL injection attack, querying the database type and version on MySQL and Microsoft
+
+since we're told that its either of the two we dont use the dual table here. so to check the amount of columns use ' union select NULL,NULL—(for MSsql or — ) or use #or— -(for mySQL) in our case the latter one worked so its my sql db. then check which is string and inject the version check ' union select @@version# (encode them and see if space is encoded before, if it was encode that too to %20, else just use plus sign)
