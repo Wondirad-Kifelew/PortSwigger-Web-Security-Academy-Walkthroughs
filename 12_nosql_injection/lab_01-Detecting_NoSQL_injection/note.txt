@@ -1,0 +1,8 @@
+Detecting NoSQL injection
+
+Since the data base in the backend uses MongoDb which s a NoSQL db and to check if its vulnerable,
+check one of the product filters and send that post req to repeater,
+then add a ' see if it reacts, and it does. You can also escape that character if the error vanishes, this also works. Therefore we can add,
+
+%27%7c%7c%27%31%27%3d%3d%271
+ which is just a boolean that is always true. and gives us all the products
