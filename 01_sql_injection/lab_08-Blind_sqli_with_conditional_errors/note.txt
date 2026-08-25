@@ -1,9 +1,29 @@
-Blind sqli with conditional errors
+Blind SQL injection with conditional errors
 
-this method is used when the cookie is used in SQL querry but notting is displayed as a result of it
+## Lab Goal
+Extract the administrator's password via a blind SQLi where the application does not display any query output back to us.
 
-here the cookie one of them, is used in sql internally, to check I used the prev methods using ' and 'a'eq'a but didnt get anything since it doesnt display anything based off of this response. so the best way was to cause a db error which gets displayed . to do that I used 
+## Why This Technique
+The vulnerable input is a cookie (TrackingId) that is used inside an SQL query server-side, but the result of that query is never reflected in the response. Standard tests like `' AND 'a'='a` produce no visible difference, so boolean-based detection fails here. Instead, we force a database error (division by zero) that the app surfaces as a 500 Internal Server Error — the error is our "true/false" signal.
 
-' and (select case when( (substr((password),1,1)) eq 'a') then to_char(1/0) else 'a' end from users where username eq 'administrator') eq 'a
+## The Working Payload
+```
+' AND (SELECT CASE WHEN (SUBSTR(password,1,1)='a') THEN TO_CHAR(1/0) ELSE 'a' END
+       FROM users WHERE username='administrator')='a
+```
+(Note: the note's original `eq 'a` was a shorthand — the actual working SQL uses `='a`.)
 
-here i increment the substring also the letter,numb i check with in the condition and if it results true cause an error by doing 1/0 which wil get displayed on the screen. so i bruteforced itto get the pass char when ever there is an error. but this method was slow in burp so i used the script 
+## How It Works
+1. The leading `'` closes the string in the original WHERE clause, so our subquery becomes part of the query.
+2. `SELECT CASE WHEN (condition) THEN TO_CHAR(1/0) ELSE 'a' END FROM users WHERE username='administrator'`
+   - Pulls the administrator's row from the `users` table.
+   - If the condition is TRUE → evaluates `TO_CHAR(1/0)` → division by zero → SQL error → app returns 500.
+   - If the condition is FALSE → returns `'a'` → no error → normal page.
+3. The condition checks one character at a time: `SUBSTR(password,{position},1)='{char}'`.
+   - `SUBSTR(password,1,1)` = first character of the password.
+   - We increment the position and cycle through letters/numbers for the guessed character.
+
+## Solution
+- Brute-force every position (1..20) × every candidate character (a-z, A-Z, 0-9).
+- A 500 response = correct character for that position.
+- This works but is slow to do manually in Burp Repeater, so I automated it with `solution.py` in this directory, which walks the TrackingId cookie and reconstructs the full password.

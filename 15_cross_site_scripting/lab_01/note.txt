@@ -1,0 +1,4 @@
+Reflected XSS into HTML context with nothing encoded
+
+In this lab there is a simple XSS vulnerability in the search functionaity. 
+simply try it using <script>alert("sth")</script> and you've solved the lab.
