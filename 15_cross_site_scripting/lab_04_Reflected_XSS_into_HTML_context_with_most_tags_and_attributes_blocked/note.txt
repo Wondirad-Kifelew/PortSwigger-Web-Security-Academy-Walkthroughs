@@ -1,0 +1,18 @@
+Reflected XSS into HTML context with most tags and attributes blocked
+
+
+In this lab, most of the tags required for XSS are blocked by the WAF. 
+There fore we try out lots of tags and see which one works. using the cheat sheat, copy the tags and in intruder, use the url to fuzz the tags
+like this, 
+
+https://0a5d00eb0474088c8027124e004500d4.web-security-academy.net/?search=%3CHERE%3E
+we can see that the tag body is allowed, use that and for the attribute, again try out from the list of attributes using 
+https://0a5d00eb0474088c8027124e004500d4.web-security-academy.net/?search=%3Cbody%20HERE%3d1%3E 
+same process, try out the attributes now, and you'll find out that onresize works. 
+finally we have what we need, our plan is to send an iframe using our lab link and making sure to explicitly set a size f the iframe. 
+but the trick is with in the url we will call print() when the iframe size
+changes. 
+use the url,
+<iframe src="https://0a5d00eb0474088c8027124e004500d4.web-security-academy.net?search=%22%3E%3Cbody%20onresize=print()%3E" onload=this.style.width='100px'>
+and store and send the payload to the victum, as he visits the resize will cause 
+the print call to run. and the lab is solved

@@ -1,0 +1,3 @@
+Stored XSS into HTML context with nothing encoded
+
+Simply use <script>alert()</script> in the comments and lab is solved

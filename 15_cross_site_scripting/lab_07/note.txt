@@ -1,0 +1,14 @@
+DOM XSS in document.write sink using source location.search
+
+In this lab since we have told it has a DOM XSS vulnerability in the search
+functionality, first, we check by typing random things on the input field and 
+see where in the html it is being emeded. 
+We ca see that it is getting inserted in 
+
+<img src="/resources/images/tracker.gif?searchTerms=randomString">
+
+so its possible to break out of the image and insert a script like this 
+
+"><script>alert()</script>
+
+and the lab is solved.
